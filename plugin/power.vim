@@ -1,16 +1,16 @@
 function! s:power(base, exponent)
-    let s:p = 1
+    let l:p = 1
 
     for i in range(a:exponent)
-        let s:p = s:p * a:base
+        let l:p = l:p * a:base
     endfor
 
-    return s:p
+    return l:p
 endfunction
 
 function! s:append_power(base, exponent)
-    let s:p = s:power(a:base, a:exponent)
-    execute ":normal a" . s:p
+    let l:p = s:power(a:base, a:exponent)
+    execute ":normal a" . l:p
 endfunction
 
 command! -nargs=* Power call s:append_power(<f-args>)
